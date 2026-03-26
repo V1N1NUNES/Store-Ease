@@ -42,18 +42,22 @@ public abstract class MenuEntrance {
                 System.out.println("Qual a categoria do produto?\n1- Eletrônicos\n2- Alimentícios\n3- Cosmético\n");
                 category = reading.nextLine();
 
+                //option verify
                 //call method for add products
                 break;
 
             case 2:
+                //option verify
                 //call method for update products
                 break;
 
             case 3:
+                //option verify
                 //call method for delete products
                 break;
 
             case 4:
+                //option verify
                 //call method for list products storage
                 break;
 
