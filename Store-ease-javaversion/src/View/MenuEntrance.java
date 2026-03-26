@@ -1,5 +1,6 @@
 package View;
 
+//imports
 import java.util.Scanner;
 
 public abstract class MenuEntrance {
@@ -27,7 +28,8 @@ public abstract class MenuEntrance {
 
         switch(optionMenu)
         {
-            case 1: //call function
+            case 1:
+
                 break;
 
             case 2: //call function
