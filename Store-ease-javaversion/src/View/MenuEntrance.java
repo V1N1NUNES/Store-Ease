@@ -17,6 +17,7 @@ public abstract class MenuEntrance {
         ArrayList<Products> storedProductsElectronics = new ArrayList<Products>();
         ArrayList<Products> storedProductsCosmetics = new ArrayList<Products>();
         int optionMenu = 0;
+        ControllerManagerProduct controller = new ControllerManagerProduct();
 
         while (optionMenu <= 0 || optionMenu >= 4)
         {
@@ -45,9 +46,10 @@ public abstract class MenuEntrance {
                 if(category <= 0 || category >= 4){
                     System.out.println("Opção não encontrada.\nVoltando ao Menu principal...\n");
                     MenuEntrance.Entrance(reading);
+                    //add loop for repeat option category
                 }
                 else if(category == 1){
-                    //add loop for register any product in the storage
+                    //add loop for register any product in the storage many times on loop
 
                     String categoryProduct = "Eletrônicos";
                     System.out.println("Digite o nome do produto: ");
@@ -58,6 +60,64 @@ public abstract class MenuEntrance {
                     int amountProduct = reading.nextInt();
 
                     Products productEletronic = new Products(nameProduct, amountProduct,priceProduct, categoryProduct);
+                    controller.addproduct(productEletronic, storedProductsElectronics);
+                    //confirm message
+
+                    MenuEntrance.Entrance(reading);
+                }
+                else if(category == 2){
+                    //add loop for register any product in the storage many times on loop
+
+                    String categoryProduct = "Alimentícios";
+                    System.out.println("Digite o nome do produto: ");
+                    String nameProduct = reading.nextLine();
+                    System.out.println("Digite o valor do produto: ");
+                    float priceProduct = reading.nextFloat();
+                    System.out.println("Digite o quantidade do produto: ");
+                    int amountProduct = reading.nextInt();
+
+                    Products productEat = new Products(nameProduct, amountProduct,priceProduct, categoryProduct);
+                    controller.addproduct(productEat, storedProductsEat);
+                    //confirm message
+
+                    MenuEntrance.Entrance(reading);
+                }
+                else if(category == 3){
+                    //add loop for register any product in the storage many times on loop
+
+                    String categoryProduct = "Cosméticos";
+                    System.out.println("Digite o nome do produto: ");
+                    String nameProduct = reading.nextLine();
+                    System.out.println("Digite o valor do produto: ");
+                    float priceProduct = reading.nextFloat();
+                    System.out.println("Digite o quantidade do produto: ");
+                    int amountProduct = reading.nextInt();
+
+                    Products productCosmetic = new Products(nameProduct, amountProduct,priceProduct, categoryProduct);
+                    controller.addproduct(productCosmetic, storedProductsCosmetics);
+                    //confirm message
+
+                    MenuEntrance.Entrance(reading);
+                }
+                break;
+
+            case 2:
+
+                System.out.println("Qual a categoria do produto?\n1- Eletrônicos\n2- Alimentícios\n3- Cosmético\n");
+                category = reading.nextInt();
+
+                if(category <= 0 || category >= 4){
+                    System.out.println("Opção não encontrada.\nVoltando ao Menu principal...\n");
+                    MenuEntrance.Entrance(reading);
+                    //add loop for repeat option category
+                }
+
+                if (category == 1){
+                    String cat = "Eletrônicos";
+
+                    System.out.println("Digite o nome do produto:\t");
+                    String nameProduct = reading.nextLine();
+
 
                 }
                 else if(category == 2){
@@ -66,12 +126,6 @@ public abstract class MenuEntrance {
                 else if(category == 3){
 
                 }
-                //call method for add products
-                break;
-
-            case 2:
-                //option verify
-                //call method for update products
                 break;
 
             case 3:

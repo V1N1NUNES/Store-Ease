@@ -5,15 +5,27 @@ import Models.Products;
 import java.util.ArrayList;
 
 public class ControllerManagerProduct {
+    String category;
+
+
+    //void constructor
+    public ControllerManagerProduct() {
+
+    }
 
     //methods for add product on storage
-    public void addproduct(){
+    public void addproduct(Products product, ArrayList<Products> productList){
+        productList.add(product);
+    }
+
+    public void deleteproduct(String category, ArrayList<Products> productList){
 
     }
 
-    public void deleteproduct(){
+    public void findProduct(String category, ArrayList<Products> productList, String productName){
 
-    }
+    };
+
 
     public void updateproduct(){
 
