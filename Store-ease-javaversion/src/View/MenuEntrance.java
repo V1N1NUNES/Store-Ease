@@ -37,12 +37,35 @@ public abstract class MenuEntrance {
         switch(optionMenu)
         {
             case 1:
-                String category;
+                int category;
 
                 System.out.println("Qual a categoria do produto?\n1- Eletrônicos\n2- Alimentícios\n3- Cosmético\n");
-                category = reading.nextLine();
+                category = reading.nextInt();
 
-                //option verify
+                if(category <= 0 || category >= 4){
+                    System.out.println("Opção não encontrada.\nVoltando ao Menu principal...\n");
+                    MenuEntrance.Entrance(reading);
+                }
+                else if(category == 1){
+                    //add loop for register any product in the storage
+
+                    String categoryProduct = "Eletrônicos";
+                    System.out.println("Digite o nome do produto: ");
+                    String nameProduct = reading.nextLine();
+                    System.out.println("Digite o valor do produto: ");
+                    float priceProduct = reading.nextFloat();
+                    System.out.println("Digite o quantidade do produto: ");
+                    int amountProduct = reading.nextInt();
+
+                    Products productEletronic = new Products(nameProduct, amountProduct,priceProduct, categoryProduct);
+
+                }
+                else if(category == 2){
+
+                }
+                else if(category == 3){
+
+                }
                 //call method for add products
                 break;
 
