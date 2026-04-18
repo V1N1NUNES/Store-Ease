@@ -1,19 +1,52 @@
 package Models;
 
-public class Products extends RegisterProducts{
-    String categoryProduct;
+public abstract class Products {
 
-    //constructor of Abstract class + category of product
-    public Products(String nameproduct, int amount, float price, String categoryProduct) {
-        super(nameproduct, amount, price);
-        this.categoryProduct = categoryProduct;
+    String name;
+    float price;
+    int amount;
+
+    //constructors
+    public Products(String name, float price, int amount, double id){
+        this.name = name;
+        this.price = price;
+        this.amount = amount;
     }
 
-    //getters and setters of category
-    public String getCategoryProduct() {
-        return categoryProduct;
+
+
+//                                  getters and setters
+
+    public String getName() {
+        return name;
     }
-    public void setCategoryProduct(String categoryProduct) {
-        this.categoryProduct = categoryProduct;
+
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+// ADICIONAR OUTRO JEITO DE VIZUALIZAR/MODIFICAR ATRIBUTOS DOS OBJETOS
+
+//                                    Other methods
+
+//    public double IdGenerate(){
+//        // - Generate Id logic
+//        return;
+//    }
+
 }

@@ -1,4 +1,4 @@
-//imports
+package App;
 import View.MenuEntrance;
 
 import java.util.Scanner;
