@@ -3,8 +3,8 @@ package Java.Models;
 public class Farmaceutico extends Produto {
     private String dataFabricacao;  //trasnformar no tipo "Data"
 
-    protected Farmaceutico(String nome, String descricao, float preco,  String dataFabricacao) {
-        super(nome, descricao, preco);
+    protected Farmaceutico(String nome, String descricao, float preco,  String dataFabricacao, PRODUTOS produto) {
+        super(nome, descricao, preco, produto);
         this.dataFabricacao = dataFabricacao;
     }
 

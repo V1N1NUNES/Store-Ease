@@ -3,8 +3,8 @@ package Java.Models;
 public class Eletronicos extends Produto{
     private String config;
 
-    protected Eletronicos(String nome, String descricao, float preco) {
-        super(nome, descricao, preco);
+    public Eletronicos(String nome, String descricao, float preco, PRODUTOS produto, String config) {
+        super(nome, descricao, preco,  produto);
         this.config = config;
     }
 

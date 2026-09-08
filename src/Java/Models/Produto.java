@@ -7,24 +7,29 @@ public abstract class Produto {
     protected String descricao;
     protected float preco;
     protected String id;
+    protected PRODUTOS produto;
 
-    protected Produto(String nome, String descricao, float preco) {
+    protected Produto(String nome, String descricao, float preco, PRODUTOS produto) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
         this.id = UUID.randomUUID().toString();
+        this.produto = produto;
     }
 
-    protected void setNome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    protected void setDescricao(String descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
-    protected void setPreco(float preco) {
+    public void setPreco(float preco) {
         this.preco = preco;
+    }
+    public PRODUTOS getProduto() {
+        return this.produto;
     }
 
     @Override

@@ -1,13 +1,19 @@
 package Java.Service;
 
-import java.util.Scanner;
+import Java.Models.Produto;
 
 public class ViewService {
-    public boolean validacaoMenus(int a, int b, int option){
-        if(option < a || option > b){
-            return false;
-        } else{
-            return true;
-        }
+    public boolean validacaoMenus(int a, int b, int option) throws NumeroDigitadoExpetion{
+        return option >= a && option <= b;
+
+
+        //fazer com que a função faça a validação completa de número inválido e número inteiro
     }
+
+    public boolean validacaoCriacaoProduto(Produto produto){
+        return produto != null;
+    }
+
+
+
 }

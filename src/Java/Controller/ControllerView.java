@@ -1,5 +1,7 @@
 package Java.Controller;
 
+import Java.DB.DataBasesStoreEasy;
+import Java.Models.Produto;
 import Java.Service.ViewService;
 import Java.View.Menus;
 
@@ -7,8 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ControllerView {
-    Menus menuController = new Menus();
-    ViewService viewService = new ViewService();
+    private final Menus menuController = new Menus();
+    private final ViewService viewService = new ViewService();
 
     Scanner r = new Scanner(System.in);
 
@@ -33,23 +35,37 @@ public class ControllerView {
     }
 
     public List menuListagem(int optin) {
-        switch (optin) {
+        return switch (optin) {
+            case 1 -> DataBasesStoreEasy.getProdutosEletronicos();
+            case 2 -> DataBasesStoreEasy.getProdutosAlimenticios();
+            case 3 -> DataBasesStoreEasy.getProdutosFarmaceuticos();
+            case 4 -> DataBasesStoreEasy.getListaProdutos();  // arrumar a mostra de todas as listas e produtos
+            default -> null;
+        };
+    }
+
+    public void menuCadastramento(int option, Produto produto) {
+        switch (option) {
             case 1:
+                //adicionar ao estoque de eletrônicos
                 break;
             case 2:
-                break;                          //CONTINUAR DAQUI
-            case 3:
+                //adicionar ao estoque de alimentos
                 break;
-            case 4:
+            case 3:
+                //adicionar ao estoque de farmaceuticos
                 break;
         }
     }
 
+    //validações
     public boolean validacaoMenus(int a, int b, int option) {
-        if (viewService.validacaoMenus(a, b, option)) {
-            return true;
-        } else {
-            return false;
-        }
+        return viewService.validacaoMenus(a, b, option);
     }
+
+    public boolean validacaoCriacaoProduto(Produto produto) {
+        return viewService.validacaoCriacaoProduto(produto);
+    }
+
+//    public boolean validacaoAdicaoProduto() {}
 }
